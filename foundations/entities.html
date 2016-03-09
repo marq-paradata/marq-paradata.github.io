@@ -63,7 +63,7 @@
     <link rel="stylesheet" href="/assets/bower_components/highlightjs/styles/monokai_sublime.css">
 
 
-    <title>Paradata Style Guide</title>
+    <title>Paradata Style Guide - Marq I</title>
   </head>
 
   <!-- Page <BODY>
@@ -167,7 +167,7 @@ The navigation item is selected by matching the 'data-id' and the "pageID" varia
            <ul class="nav nav-pills nav-stacked tree">
               <li><a href="/components/breadcrumb/" data-id="component-breadcrumb">Breadcrumb</a></li>
               <li><a href="/components/buttons/" data-id="buttons">Buttons</a></li>
-              <li><a href="/components/dialogs/" data-id="dialogs"><strike>@@titleDialog</strike></a></li>
+              <!-- <li><a href="/components/dialogs/" data-id="dialogs"><strike>@@titleDialog</strike></a></li> -->
               <li><a href="/components/forms/" data-id="forms">Forms</a></li>
 <!--               <li><a href="/components/tabs/" data-id="tabs">Tabs</a></li> -->
               <li><a href="/components/tooltips/" data-id="tooltips">Tooltips</a></li>
@@ -178,6 +178,7 @@ The navigation item is selected by matching the 'data-id' and the "pageID" varia
                   <li><a href="/components/date_single/" data-id="date-single">Date, Single Date</a></li>
                   <li><a href="/components/long_list_single/" data-id="long-list-single">List, Long Single Value</a></li>
                   <li><a href="/components/long_list_multi/" data-id="long-list-multi">List, Long Multi Value</a></li>
+                  <li><a href="/components/select_angular/" data-id="angular-select">Select2 Box with Angular</a></li>
                   <li><a href="/components/money/" data-id="money-input">Money Input</a></li>
                   <li><a href="/components/quantity/" data-id="quantity-input">Quantity Input</a></li>
                 </ul>
@@ -233,6 +234,9 @@ The navigation item is selected by matching the 'data-id' and the "pageID" varia
     <!-- Component Library (Style Guide) Specific JS -->
     <script src="/assets/js/styleguide.js"></script>
 
+    <!-- Angular Library-->
+    <script src="/assets/bower_components/angular/angular.min.js"></script>
+
 
     <!-- HighLight Plugin for code snippest -->
     <script src="/assets/bower_components/highlightjs/highlight.pack.js"></script>
@@ -244,6 +248,25 @@ The navigation item is selected by matching the 'data-id' and the "pageID" varia
         $(item).html(htmlOfElement);
         hljs.highlightBlock(item);
       });
+    </script>
+    
+    <!-- Angular module setup -->
+    <script>
+      var angApp = angular.module('myApp',[]);
+        angApp.controller('appCtrl', ['$scope', function($scope){
+          $scope.collection = [
+            {name:'Scott'},
+            {name:'Steve'},
+            {name:'Nick'},
+            {name:'Asha'},
+            {name:'Vishak'},
+            {name:'Joel'},
+            {name:'Ralph'},
+            {name:'Marq'},
+            {name:'Michele'},
+            {name:'Kiavash'}
+          ];
+        }]);
     </script>
 
     <!-- FOR DEV PURPOSES: LiveReload -->
